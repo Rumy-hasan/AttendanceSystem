@@ -22,7 +22,7 @@ jobs:
           echo Using default scheme: $default
       - name: Build
         run: |
-          xcodebuild build-for-testing -scheme githubAction -destination "platform=iOS Simulator,name=iPhone 12 Pro"
+          xcodebuild build-for-testing -scheme AttendanceSystem -destination "platform=iOS Simulator,name=iPhone 12 Pro"
       - name: Test
         run: |
-          xcodebuild test-without-building -scheme githubAction -destination "platform=iOS Simulator,name=iPhone 12 Pro"
+          xcodebuild test-without-building -scheme AttendanceSystem -destination "platform=iOS Simulator,name=iPhone 12 Pro"
