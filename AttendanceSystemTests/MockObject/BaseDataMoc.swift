@@ -16,6 +16,6 @@ class MockBaseObj:BaseData{
         self.centerLat = 23.7804
         self.centerLon = 90.3941
         self.buildingRadius = 4
-        self.floorHeight = 16
+        self.floorHeight = 4
     }
 }
