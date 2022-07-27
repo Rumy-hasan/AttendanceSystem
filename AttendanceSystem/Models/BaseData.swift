@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 import CoreLocation
 
-final class BaseData: ObservableObject{
+class BaseData: ObservableObject{
     @Published var checkIn: Date
     @Published var checkOut: Date
     @Published var floorHeight: Double
