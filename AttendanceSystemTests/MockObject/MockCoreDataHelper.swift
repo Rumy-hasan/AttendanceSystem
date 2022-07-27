@@ -18,13 +18,18 @@ class MockCoreDataHelper: CoreDataHelper {
         
         let containers = NSPersistentCloudKitContainer(name: CoreDataHelper.containerName)
         
-        guard let description = containers.persistentStoreDescriptions.first else{
-            fatalError("No description found")
-        }
-        description.setOption(true as NSObject, forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey)
-        description.cloudKitContainerOptions = NSPersistentCloudKitContainerOptions(containerIdentifier: containerIdentifier)
+//        guard let description = containers.persistentStoreDescriptions.first else{
+//            fatalError("No description found")
+//        }
+//        description.setOption(true as NSObject, forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey)
+//        description.cloudKitContainerOptions = NSPersistentCloudKitContainerOptions(containerIdentifier: containerIdentifier)
         
         //containers.persistentStoreDescriptions = [persistentStoreDescription]
+        
+        let persistentStoreDescription = NSPersistentStoreDescription()
+        persistentStoreDescription.setOption(true as NSObject, forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey)
+        persistentStoreDescription.cloudKitContainerOptions = NSPersistentCloudKitContainerOptions(containerIdentifier: containerIdentifier)
+        containers.persistentStoreDescriptions = [persistentStoreDescription]
         
         containers.loadPersistentStores { _, error in
             if let error = error as NSError? {
