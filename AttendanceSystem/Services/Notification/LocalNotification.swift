@@ -12,6 +12,7 @@ class LocalNotification{
     private let content = UNMutableNotificationContent()
     
     init() {
+        //test
         self.askPermission()
     }
     
