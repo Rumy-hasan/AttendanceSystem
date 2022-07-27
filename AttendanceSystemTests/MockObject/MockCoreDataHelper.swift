@@ -13,11 +13,18 @@ import CoreData
 class MockCoreDataHelper: CoreDataHelper {
     override init() {
         super.init()
-        let persistentStoreDescription = NSPersistentStoreDescription()
-        persistentStoreDescription.type = NSInMemoryStoreType
+//        let persistentStoreDescription = NSPersistentStoreDescription()
+//        persistentStoreDescription.type = NSInMemoryStoreType
         
         let containers = NSPersistentCloudKitContainer(name: CoreDataHelper.containerName)
-        containers.persistentStoreDescriptions = [persistentStoreDescription]
+        
+        guard let description = containers.persistentStoreDescriptions.first else{
+            fatalError("No description found")
+        }
+        description.setOption(true as NSObject, forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey)
+        description.cloudKitContainerOptions = NSPersistentCloudKitContainerOptions(containerIdentifier: containerIdentifier)
+        
+        //containers.persistentStoreDescriptions = [persistentStoreDescription]
         
         containers.loadPersistentStores { _, error in
             if let error = error as NSError? {
