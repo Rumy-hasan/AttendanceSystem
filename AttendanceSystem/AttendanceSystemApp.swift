@@ -11,7 +11,8 @@ import SwiftUI
 struct AttendanceSystemApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+           ContentView()
         }
     }
 }
+

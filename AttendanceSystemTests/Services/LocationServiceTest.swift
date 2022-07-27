@@ -1,14 +1,13 @@
 //
-//  AttendanceSystemTests.swift
+//  LocationServiceTest.swift
 //  AttendanceSystemTests
 //
-//  Created by Paradox Space Rumy M1 on 22/7/22.
+//  Created by Paradox Space Rumy M1 on 27/7/22.
 //
 
 import XCTest
-@testable import AttendanceSystem
 
-class AttendanceSystemTests: XCTestCase {
+class LocationServiceTest: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
