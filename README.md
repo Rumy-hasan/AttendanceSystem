@@ -12,6 +12,7 @@ Calculate when a staff come to office
  2 main components or services needed.
  - User location
  - Persist data
+ 
 Right now it's in different folder as it needed very little. As project goes bigger we have to 
 transform those into separate framework or library according to our need. This way we can make 
 project parallel and do unit test without depending others.
